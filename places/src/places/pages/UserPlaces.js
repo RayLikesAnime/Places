@@ -1,6 +1,7 @@
 import React from "react";
 import PlaceList from "../components/PlaceList";
 import { useParams } from "react-router-dom";
+import Button from "../../shared/components/FormElements/Button";
 
 const DUMMY_PLACES=[{
     id: 'p1',
