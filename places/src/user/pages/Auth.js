@@ -73,7 +73,7 @@ const Auth = () => {
 
     if(isLoginMode){
         try{
-            const responseData=await sendRequest('http://localhost:5000/api/users/login','POST', JSON.stringify({
+            const responseData=await sendRequest(process.env.REACT_APP_BACKEND_URL+  '/users/login','POST', JSON.stringify({
                 email:formState.inputs.email.value,
                 password:formState.inputs.password.value
             }),{
@@ -94,7 +94,7 @@ const Auth = () => {
 
 
 
-            const responseData=await sendRequest('http://localhost:5000/api/users/signup','POST', formData);
+            const responseData=await sendRequest(process.env.REACT_APP_BACKEND_URL +'/users/signup','POST', formData);
                 auth.login(responseData.userId,responseData.token);
 
         }
